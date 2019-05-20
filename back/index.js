@@ -1,5 +1,5 @@
 var restify = require('restify');
-var InstantPiCameraManager = require('./camera/InstantPiCamera';)
+var InstantPiCameraManager = require('./camera/InstantPiCamera');
 
 
 function respond(req, res, next) {
