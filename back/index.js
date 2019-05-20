@@ -7,7 +7,7 @@ function respond(req, res, next) {
   next();
 }
 
-function respondInstantPiCamera(req, res, next) {
+async function respondInstantPiCamera(req, res, next) {
   // const piCam = new InstantPiCameraManager;
   try {
     // piCam.getPicture();
