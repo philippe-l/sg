@@ -11,7 +11,9 @@ function respondInstantPiCamera(req, res, next) {
   // const piCam = new InstantPiCameraManager;
   try {
     // piCam.getPicture();
-    if (instantPiCam.getPiPicture()) {
+    const piCamResult = instantPiCam.getPiPicture();
+    console.log('piCamResult = ' +piCamResult);
+    if (piCamResult) {
       res.send(true);
       next();
     }
