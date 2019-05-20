@@ -25,6 +25,7 @@ async function respondInstantPiCamera(req, res, next) {
 async function respondInstantPiTempAndHumidity(req, res, next) {
   try {
     const instantSensorResult = await instantSensor.getTemperatureAndHumidity();
+    console.log("instantSensorResult"); 
     console.log(instantSensorResult); 
     res.send(instantSensorResult);
     next();
