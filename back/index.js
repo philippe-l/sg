@@ -12,11 +12,9 @@ async function respondInstantPiCamera(req, res, next) {
   try {
     // piCam.getPicture();
     const piCamResult = await instantPiCam.getPiPicture();
-    console.log('piCamResult = ' +piCamResult);
-    if (piCamResult) {
-      res.send(true);
-      next();
-    }
+    // console.log('piCamResult = ' +piCamResult);
+    res.send(true);
+    next();
   }
   catch (error) {
     console.error('Probleme with Cam ' + error);
