@@ -11,7 +11,10 @@ function respondInstantPiCamera(req, res, next) {
   // const piCam = new InstantPiCameraManager;
   try {
     // piCam.getPicture();
-    instantPiCam.getPiPicture();
+    if (instantPiCam.getPiPicture()) {
+      res.send(true);
+      next();
+    }
   }
   catch (error) {
     console.error('Probleme with Cam ' + error);
