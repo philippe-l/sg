@@ -1,5 +1,5 @@
 var restify = require('restify');
-var InstantPiCameraManager = require('./camera/InstantPiCamera');
+var instantPiCam = require('./camera/InstantPiCamera');
 
 
 function respond(req, res, next) {
@@ -8,9 +8,10 @@ function respond(req, res, next) {
 }
 
 function respondInstantPiCamera(req, res, next) {
-  const piCam = new InstantPiCameraManager;
+  // const piCam = new InstantPiCameraManager;
   try {
-    piCam.getPicture();
+    // piCam.getPicture();
+    instantPiCam.getPiPicture();
   }
   catch (error) {
     console.error('Probleme with Cam ' + error);
