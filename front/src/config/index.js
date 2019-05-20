@@ -1,4 +1,4 @@
 export const config = {
-    baseURL: "localhost",
-    basePort: "3333" 
+    baseURL: "192.168.1.77",
+    basePort: "80" 
 };
