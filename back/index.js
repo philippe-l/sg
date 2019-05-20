@@ -26,6 +26,8 @@ async function respondInstantPiTempAndHumidity(req, res, next) {
   try {
     const instantSensorResult = await instantSensor.getTemperatureAndHumidity();
     console.log(instantSensorResult); 
+    res.send(instantSensorResult);
+    next();
   }
   catch(error) {
     console.error('Probleme with sensor ' + error);
