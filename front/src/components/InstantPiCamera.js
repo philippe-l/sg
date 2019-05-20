@@ -17,12 +17,15 @@ export default class InstantPiCamera extends React.Component {
         const self = this;
         console.log(config.baseURL + ":"+config.basePort+"/instantPiCamera");
         fetchUrl("http://" + config.baseURL + ":"+config.basePort+"/instantPiCamera", function(error, meta, body){
-            // console.log(body.toString());
             console.log(error);
             if (error) return;
             console.log(meta);
             console.log(body);
-            self.setState({pictureURL: 'static/piPicture.jpg'})
+            setTimeout(()=>{
+                self.setState({pictureURL: 'static/piPicture.jpg'})
+            }, 5000);
+            // if (body.data === true) 
+            //     self.setState({pictureURL: 'static/piPicture.jpg'})
         });
     }
 
