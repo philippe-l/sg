@@ -1,5 +1,6 @@
 var restify = require('restify');
 var instantPiCam = require('./camera/InstantPiCamera');
+var instantSensor = require('./sensor/InstantSensor');
 
 
 function respond(req, res, next) {
@@ -18,6 +19,16 @@ async function respondInstantPiCamera(req, res, next) {
   }
   catch (error) {
     console.error('Probleme with Cam ' + error);
+  }
+}
+
+async function respondInstantPiTempAndHumidity(req, res, next) {
+  try {
+    const instantSensorResult = await instantSensor.getTemperatureAndHumidity();
+    console.log(instantSensorResult); 
+  }
+  catch(error) {
+    console.error('Probleme with sensor ' + error);
   }
 }
 
@@ -40,6 +51,7 @@ server.get('/static/*', // don't forget the `/*`
 /* REST API */
 
 server.get('/instantPiCamera', respondInstantPiCamera);
+server.get('/instantPiTempAndHumidity', respondInstantPiTempAndHumidity);
 
 
 server.listen(3333, function() {
