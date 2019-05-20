@@ -2,7 +2,7 @@ exports.getPiPicture = function () {
     const PiCamera = require('pi-camera');
     const myCamera = new PiCamera({
         mode: 'photo',
-        output: '..front/build/static/latestpiPicture.jpg',
+        output: '../front/build/static/latestpiPicture.jpg',
         width: 640,
         height: 480,
         nopreview: true,
