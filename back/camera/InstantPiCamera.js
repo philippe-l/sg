@@ -1,8 +1,9 @@
 exports.getPiPicture = function () {
     const PiCamera = require('pi-camera');
+    const timestamp = date.getTime();
     const myCamera = new PiCamera({
         mode: 'photo',
-        output: '../front/build/static/latestpiPicture.jpg',
+        output: '../front/build/static/piPicture.jpg',
         width: 640,
         height: 480,
         nopreview: true,
@@ -10,8 +11,8 @@ exports.getPiPicture = function () {
 
     myCamera.snap()
     .then((result) => {
-        console.log('rbPiZero taking picture....')
-        return 'latestpiPicture.jpg';
+        console.log('rbPiZero took a picture named static/piPicture.jpg');
+        return true;
     })
     .catch((error) => {
         console.error('An error occured while taking picture with rbPiZero cam ' + error);
