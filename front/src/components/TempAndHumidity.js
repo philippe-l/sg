@@ -16,18 +16,15 @@ export default class TempAndHumidity extends React.Component {
     componentWillMount() {
       const self = this;
       console.log(config.baseURL + ":"+config.basePort+"/instantPiTempAndHumidity");
-      fetchUrl("http://" + config.baseURL + ":"+config.basePort+"/instantPiTempAndHumidity", function(error, meta, body){
-          console.log(error);
-          if (error) return;
-          console.log(meta);
-          console.log(body);
+      fetch("http://" + config.baseURL + ":"+config.basePort+"/instantPiTempAndHumidity")
+        .then(response => response.json())
+        .then(data => {
+          console.log(data);
           self.setState({
-            temp: body.temperature,
-            hum: body.humidity
+            temp: data.temperature,
+            hum: data.humidity
           });
-          // if (body.data === true) 
-          // });
-      });
+        });
     }
     
     render() {
