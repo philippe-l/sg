@@ -1,4 +1,4 @@
-exports.getPiPicture = async function () {
+exports.getPiPicture = function () {
     const PiCamera = require('pi-camera');
     const myCamera = new PiCamera({
         mode: 'photo',
