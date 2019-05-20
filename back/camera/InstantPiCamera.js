@@ -1,6 +1,5 @@
 exports.getPiPicture = function () {
     const PiCamera = require('pi-camera');
-    const timestamp = date.getTime();
     const myCamera = new PiCamera({
         mode: 'photo',
         output: '../front/build/static/piPicture.jpg',
