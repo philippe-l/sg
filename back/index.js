@@ -1,5 +1,7 @@
 var restify = require('restify');
 var instantPiCam = require('./camera/InstantPiCamera');
+var piCamManager = require('./camera/PiCameraConnectManager');
+
 var instantSensor = require('./sensor/InstantSensor');
 
 
@@ -12,7 +14,8 @@ async function respondInstantPiCamera(req, res, next) {
   // const piCam = new InstantPiCameraManager;
   try {
     // piCam.getPicture();
-    const piCamResult = await instantPiCam.getPiPicture();
+    // const piCamResult = await instantPiCam.getPiPicture();
+    const piCamResult = await piCamManager.getPiPicture();
     // console.log('piCamResult = ' +piCamResult);
     res.send(true);
     next();

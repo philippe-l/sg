@@ -12,6 +12,7 @@
   "dependencies": {
     "node-dht-sensor": "^0.3.0",
     "pi-camera": "^1.2.1",
+    "pi-camera-connect": "^0.2.0",
     "restify": "^8.3.2"
   }
 }
