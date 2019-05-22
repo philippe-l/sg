@@ -31,7 +31,7 @@ export default class InstantPiCamera extends React.Component {
 
     render() {
       return this.state.pictureURL ? 
-        <img src={this.state.pictureURL} alt="green closet"/> 
+        <img src={this.state.pictureURL} alt="green closet" width={800}/> 
         :
         <p>Loading.....</p>
     }
