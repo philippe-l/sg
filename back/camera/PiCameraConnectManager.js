@@ -1,4 +1,4 @@
-import { StillCamera } from "pi-camera-connect";
+const { StillCamera } = require("pi-camera-connect");
 import * as fs from "fs";
  
 // Take still image and save to disk
