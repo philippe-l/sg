@@ -1,5 +1,6 @@
 const { StillCamera } = require("pi-camera-connect");
-import * as fs from "fs";
+// import * as fs from "fs";
+const fs = require('fs');
  
 // Take still image and save to disk
 exports.getPiPicture  = async () => {
