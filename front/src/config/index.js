@@ -1,4 +1,4 @@
 export const config = {
-    baseURL: "192.168.1.77",
+    baseURL: "my-sg.viewdns.net",
     basePort: "80" 
 };
