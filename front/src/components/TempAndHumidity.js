@@ -1,5 +1,4 @@
 import React from 'react';
-import {fetchUrl} from 'fetch';
 
 import {config} from '../config';
 
