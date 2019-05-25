@@ -31,3 +31,9 @@
     transform: rotate(360deg);
   }
 }
+
+
+.demoForm {
+	width: 500px;
+	margin: auto;
+}

@@ -11,20 +11,20 @@ export default class Login  extends Component {
     }
       
     handler() {
-    this.setState({signIn: true});
+        this.setState({signIn: true});
     }
 
     render(){
         return(
             <div className='loginForm'>
-                {(this.state.signIn ? <User /> : <Form handler={this.handler}/>)}
+                <Form handler={this.handler}/>
             </div>
         );
     }
 }
 
 
-class Form extends React.Component {
+class Form extends Component {
   
     constructor(props) {
       super(props);
@@ -132,10 +132,12 @@ class Form extends React.Component {
     }  
   }
   
-  class FormErrors extends React.Component {
+  class FormErrors extends Component {
     render() {
-      <div className='formErrors'>
+      return(
+        <div className='formErrors'>
         
-      </div>
+        </div>
+      );
     }
   }
